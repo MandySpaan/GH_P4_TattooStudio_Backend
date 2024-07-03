@@ -1,6 +1,13 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import { login, register } from "./controllers/auth.controller";
+import {
+  changeUserRole,
+  deleteUser,
+  getUserProfile,
+  getUsers,
+  updateUserProfile,
+} from "./controllers/users.controller";
 
 const app = express();
 
@@ -15,6 +22,13 @@ app.get("/healthy", (req: Request, res: Response) => {
 // Authentication
 app.post("/api/auth/register", register);
 app.post("/api/auth/login", login);
+
+//Users
+app.get("/api/users", getUsers);
+app.get("/api/users/profile", getUserProfile);
+app.post("/api/users/profile", updateUserProfile);
+app.delete("/api/users/:id", deleteUser);
+app.put("/api/users/:id/role", changeUserRole);
 
 // Server running
 app.listen(PORT, () => {
