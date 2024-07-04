@@ -14,6 +14,12 @@ import {
   getAppointmentById,
   updateAppointment,
 } from "./controllers/appts.controller";
+import {
+  createService,
+  deleteServiceById,
+  getAllServices,
+  updateServiceById,
+} from "./controllers/services.controller";
 
 const app = express();
 
@@ -41,6 +47,12 @@ app.post("/api/appointments", createAppointment);
 app.put("/api/appointments", updateAppointment);
 app.get("/api/appointments/:id", getAppointmentById);
 app.get("/api/appointments", getAllAppointments);
+
+//Services
+app.get("/api/services", getAllServices);
+app.post("/api/services", createService);
+app.put("/api/services/:id", updateServiceById);
+app.delete("/api/services/:id", deleteServiceById);
 
 // Server running
 app.listen(PORT, () => {
