@@ -20,6 +20,7 @@ import {
   getAllServices,
   updateServiceById,
 } from "./controllers/services.controller";
+import { AppDataSource } from "./database/db";
 
 const app = express();
 
@@ -54,7 +55,14 @@ app.post("/api/services", createService);
 app.put("/api/services/:id", updateServiceById);
 app.delete("/api/services/:id", deleteServiceById);
 
-// Server running
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Db connected & server running
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Database connected");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
