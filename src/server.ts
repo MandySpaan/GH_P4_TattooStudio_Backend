@@ -8,6 +8,12 @@ import {
   getUsers,
   updateUserProfile,
 } from "./controllers/users.controller";
+import {
+  createAppointment,
+  getAllAppointments,
+  getAppointmentById,
+  updateAppointment,
+} from "./controllers/appts.controller";
 
 const app = express();
 
@@ -29,6 +35,12 @@ app.get("/api/users/profile", getUserProfile);
 app.post("/api/users/profile", updateUserProfile);
 app.delete("/api/users/:id", deleteUser);
 app.put("/api/users/:id/role", changeUserRole);
+
+//Appointments
+app.post("/api/appointments", createAppointment);
+app.put("/api/appointments", updateAppointment);
+app.get("/api/appointments/:id", getAppointmentById);
+app.get("/api/appointments", getAllAppointments);
 
 // Server running
 app.listen(PORT, () => {
