@@ -19,7 +19,8 @@ export class Roles1720251870347 implements MigrationInterface {
             length: "40",
           },
         ],
-      })
+      }),
+      true
     );
   }
 
