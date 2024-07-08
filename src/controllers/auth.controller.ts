@@ -4,7 +4,7 @@ import { User } from "../database/models/User";
 
 export const register = async (req: Request, res: Response) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, roleId } = req.body;
 
     if (!firstName || !lastName || !email || !password) {
       return res.status(400).json({
@@ -29,6 +29,7 @@ export const register = async (req: Request, res: Response) => {
       lastName: lastName,
       email: email,
       password: hashedPassword,
+      roleId: roleId,
     }).save();
 
     res.status(201).json({

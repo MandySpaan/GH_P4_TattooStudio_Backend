@@ -19,6 +19,7 @@ export const roleSeeder = async () => {
     user.id = 3;
     user.roleName = "user";
     await user.save();
+    console.log("Roles have been created");
   } catch (error: any) {
     console.log("Error roleSeeder:", error.message);
   } finally {
