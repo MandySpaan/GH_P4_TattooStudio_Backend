@@ -3,7 +3,14 @@ import { Role } from "../database/models/Role";
 
 export const createRole = async (req: Request, res: Response) => {
   try {
-    const role = req.body;
+    const role = req.body.roleName;
+
+    if (!role) {
+      return res.status(400).json({
+        success: false,
+        message: "Required: roleName",
+      });
+    }
 
     const newRole = await Role.create({ roleName: role }).save();
 
