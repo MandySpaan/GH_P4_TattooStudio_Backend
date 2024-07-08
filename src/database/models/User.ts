@@ -32,14 +32,14 @@ export class User extends BaseEntity {
   role!: Role;
 
   @Column({ name: "created_at" })
-  created_at!: Date;
+  createdAt!: Date;
 
   @Column({ name: "updated_at" })
-  updated_at!: Date;
+  updatedAt!: Date;
 
   @Column({ name: "is_active" })
-  is_active!: boolean;
+  isActive!: boolean;
 
-  @OneToMany(() => Appointment, appointment => appointment.user)
+  @OneToMany(() => Appointment, (appointment) => appointment.user)
   appointments!: Appointment[];
 }

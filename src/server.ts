@@ -21,6 +21,7 @@ import {
   updateServiceById,
 } from "./controllers/services.controller";
 import { AppDataSource } from "./database/db";
+import { createRole } from "./controllers/roles.controller";
 
 const app = express();
 
@@ -31,6 +32,9 @@ const PORT = process.env.PORT || 4000;
 app.get("/healthy", (req: Request, res: Response) => {
   res.send("Server is healthy");
 });
+
+//Roles
+app.post("/api/roles", createRole);
 
 // Authentication
 app.post("/api/auth/register", register);
