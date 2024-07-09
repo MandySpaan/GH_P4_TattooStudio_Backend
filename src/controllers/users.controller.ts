@@ -68,7 +68,13 @@ export const updateUserProfileById = async (req: Request, res: Response) => {
       message: "User updated",
       data: userUpdated,
     });
-  } catch (error) {}
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: "Error trying to update user",
+      error: error.message || error,
+    });
+  }
 };
 
 export const getUserByEmail = (req: Request, res: Response) => {
