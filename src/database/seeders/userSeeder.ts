@@ -47,7 +47,6 @@ export const userSeeder = async () => {
         lastName: "Davis",
         email: "user6@example.com",
         password: "password6",
-        roleId: 2,
       },
       {
         firstName: "Diana",

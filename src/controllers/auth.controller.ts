@@ -1,5 +1,6 @@
-import { Request, Response } from "express";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { Request, Response } from "express";
 import { User } from "../database/models/User";
 
 export const register = async (req: Request, res: Response) => {
@@ -46,6 +47,60 @@ export const register = async (req: Request, res: Response) => {
   }
 };
 
-export const login = (req: Request, res: Response) => {
-  res.send("Login code to be written");
+export const login = async (req: Request, res: Response) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Required info: email, password",
+      });
+    }
+
+    const user = await User.findOne({
+      where: { email: email },
+    });
+
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "Email not found",
+      });
+    }
+
+    const isPasswordValid = bcrypt.compareSync(password, user.password);
+
+    if (!isPasswordValid) {
+      return res.status(400).json({
+        success: false,
+        message: "Password not valid",
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        id: user.id,
+        role: user.roleId,
+        email: user.email,
+      },
+      process.env.JWT_SECRET as string,
+      {
+        expiresIn: "2h",
+      }
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "User logged in",
+      data: user,
+      token: token,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error trying to log in",
+      error: error,
+    });
+  }
 };
