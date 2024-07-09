@@ -1,9 +1,28 @@
 import { Request, Response } from "express";
+import { User } from "../database/models/User";
 
-export const getUsers = (req: Request, res: Response) => {
-  res.send("getUsers code to be written");
-  //get all users if no email specified
-  //get user by email if email is specified
+export const getAllUsers = async (req: Request, res: Response) => {
+  try {
+    //ToDo: add code to show max 10 users per page
+    //ToDo: make results so that roleId shows the name of the role
+    const users = await User.find({
+      select: {
+        password: false,
+      },
+    });
+
+    res.json({
+      success: true,
+      message: "All users retrieved",
+      data: users,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving users",
+      error: error,
+    });
+  }
 };
 
 export const getUserProfile = (req: Request, res: Response) => {
@@ -12,6 +31,10 @@ export const getUserProfile = (req: Request, res: Response) => {
 
 export const updateUserProfile = (req: Request, res: Response) => {
   res.send("updateUserProfile code to be written");
+};
+
+export const getUserByEmail = (req: Request, res: Response) => {
+  res.send("getUserByEmail code to be written");
 };
 
 export const deleteUser = (req: Request, res: Response) => {
