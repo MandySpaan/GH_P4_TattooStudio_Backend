@@ -4,11 +4,11 @@ import { User } from "../database/models/User";
 export const getAllUsers = async (req: Request, res: Response) => {
   try {
     //ToDo: add code to show max 10 users per page
-    //ToDo: make results so that roleId shows the name of the role
     const users = await User.find({
       select: {
         password: false,
       },
+      relations: ["role"],
     });
 
     res.json({
@@ -16,17 +16,39 @@ export const getAllUsers = async (req: Request, res: Response) => {
       message: "All users retrieved",
       data: users,
     });
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({
       success: false,
       message: "Error retrieving users",
-      error: error,
+      error: error.message || error,
     });
   }
 };
 
-export const getUserProfile = (req: Request, res: Response) => {
-  res.send("getUserProfile code to be written");
+export const getUserProfile = async (req: Request, res: Response) => {
+  try {
+    const userId = req.tokenData.id;
+
+    const user = await User.findOne({
+      where: {
+        id: userId,
+      },
+      select: ["id", "firstName", "lastName", "email", "role"],
+      relations: ["role"],
+    });
+
+    res.json({
+      success: true,
+      message: "User profile retrieved",
+      data: user,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: "Error trying to retrieve user profile",
+      error: error.message || error,
+    });
+  }
 };
 
 export const updateUserProfile = (req: Request, res: Response) => {

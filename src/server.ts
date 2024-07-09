@@ -23,6 +23,7 @@ import {
 } from "./controllers/services.controller";
 import { AppDataSource } from "./database/db";
 import { createRole } from "./controllers/roles.controller";
+import { auth } from "./middleware/auth";
 
 const app = express();
 
@@ -43,7 +44,7 @@ app.post("/api/auth/login", login);
 
 //Users
 app.get("/api/users", getAllUsers);
-app.get("/api/users/profile", getUserProfile);
+app.get("/api/users/profile", auth, getUserProfile);
 app.post("/api/users/profile", updateUserProfile);
 app.get("/api/users/email", getUserByEmail);
 app.delete("/api/users/:id", deleteUser);
