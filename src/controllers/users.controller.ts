@@ -51,8 +51,24 @@ export const getUserProfile = async (req: Request, res: Response) => {
   }
 };
 
-export const updateUserProfile = (req: Request, res: Response) => {
-  res.send("updateUserProfile code to be written");
+export const updateUserProfileById = async (req: Request, res: Response) => {
+  try {
+    const userIdToUpdate = req.params.id;
+    const body = req.body;
+
+    const userUpdated = await User.update(
+      {
+        id: parseInt(userIdToUpdate),
+      },
+      body
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "User updated",
+      data: userUpdated,
+    });
+  } catch (error) {}
 };
 
 export const getUserByEmail = (req: Request, res: Response) => {

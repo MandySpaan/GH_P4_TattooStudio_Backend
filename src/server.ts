@@ -6,7 +6,7 @@ import {
   deleteUser,
   getUserProfile,
   getAllUsers,
-  updateUserProfile,
+  updateUserProfileById,
   getUserByEmail,
 } from "./controllers/users.controller";
 import {
@@ -45,7 +45,7 @@ app.post("/api/auth/login", login);
 //Users
 app.get("/api/users", getAllUsers);
 app.get("/api/users/profile", auth, getUserProfile);
-app.post("/api/users/profile", updateUserProfile);
+app.post("/api/users/profile/:id", updateUserProfileById);
 app.get("/api/users/email", getUserByEmail);
 app.delete("/api/users/:id", deleteUser);
 app.put("/api/users/:id/role", changeUserRole);
