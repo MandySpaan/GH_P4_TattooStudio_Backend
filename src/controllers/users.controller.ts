@@ -56,13 +56,16 @@ export const updateUserProfile = (req: Request, res: Response) => {
 };
 
 export const getUserByEmail = (req: Request, res: Response) => {
+  //ToDo: extra, not mandatory for project
   res.send("getUserByEmail code to be written");
 };
 
 export const deleteUser = (req: Request, res: Response) => {
+  //ToDo: extra, not mandatory for project
   res.send("deleteUser code to be written");
 };
 
 export const changeUserRole = (req: Request, res: Response) => {
+  //ToDo: extra, not mandatory for project
   res.send("changeUserRole code to be written");
 };

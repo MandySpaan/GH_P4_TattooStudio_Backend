@@ -6,7 +6,7 @@ export const auth = (req: Request, res: Response, next: NextFunction) => {
   try {
     if (!req.headers.authorization) {
       return res.status(401).json({
-        suucess: false,
+        success: false,
         message: "Unauthorized",
       });
     }
@@ -24,11 +24,11 @@ export const auth = (req: Request, res: Response, next: NextFunction) => {
     };
 
     next();
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({
       success: false,
       message: "Error with authentication",
-      error: error,
+      error: error.message || error,
     });
   }
 };
