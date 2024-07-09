@@ -27,9 +27,8 @@ export class User extends BaseEntity {
   @Column({ name: "password" })
   password!: string;
 
-  @ManyToOne(() => Role, (role) => role.users)
-  @JoinColumn({ name: "role_id" })
-  roleId!: Role;
+  @Column({ name: "role_id" })
+  roleId!: number;
 
   @Column({ name: "created_at" })
   createdAt!: Date;
@@ -39,6 +38,10 @@ export class User extends BaseEntity {
 
   @Column({ name: "is_active" })
   isActive!: boolean;
+
+  @ManyToOne(() => Role, (role) => role.users)
+  @JoinColumn({ name: "role_id" })
+  role!: Role;
 
   @OneToMany(() => Appointment, (appointment) => appointment.user)
   appointments!: Appointment[];

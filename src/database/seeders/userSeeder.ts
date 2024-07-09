@@ -2,8 +2,6 @@ const bcrypt = require("bcrypt");
 import { AppDataSource } from "../db";
 import { User } from "../models/User";
 
-//ToDo, have some users be super_admin and admin
-
 export const userSeeder = async () => {
   try {
     await AppDataSource.initialize();
@@ -14,37 +12,42 @@ export const userSeeder = async () => {
         lastName: "Spaan",
         email: "user1@example.com",
         password: "password1",
-        // roleId: 1,
+        roleId: 1,
       },
       {
         firstName: "John",
         lastName: "Doe",
         email: "user2@example.com",
         password: "password2",
+        roleId: 1,
       },
       {
         firstName: "Jane",
         lastName: "Smith",
         email: "user3@example.com",
         password: "password3",
+        roleId: 2,
       },
       {
         firstName: "Alice",
         lastName: "Johnson",
         email: "user4@example.com",
         password: "password4",
+        roleId: 2,
       },
       {
         firstName: "Bob",
         lastName: "Brown",
         email: "user5@example.com",
         password: "password5",
+        roleId: 2,
       },
       {
         firstName: "Charlie",
         lastName: "Davis",
         email: "user6@example.com",
         password: "password6",
+        roleId: 2,
       },
       {
         firstName: "Diana",
@@ -319,7 +322,7 @@ export const userSeeder = async () => {
       user.lastName = userData.lastName;
       user.email = userData.email;
       user.password = bcrypt.hashSync(userData.password, 10);
-      // user.roleId = userData.roleId || 3;
+      user.roleId = userData.roleId || 3;
 
       await user.save();
     }
