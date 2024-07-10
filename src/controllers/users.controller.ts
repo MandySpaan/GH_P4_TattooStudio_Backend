@@ -51,14 +51,14 @@ export const getUserProfile = async (req: Request, res: Response) => {
   }
 };
 
-export const updateUserProfileById = async (req: Request, res: Response) => {
+export const updateUserProfile = async (req: Request, res: Response) => {
   try {
-    const userIdToUpdate = req.params.id;
+    const userIdToUpdate = req.tokenData.id;
     const body = req.body;
 
     const userUpdated = await User.update(
       {
-        id: parseInt(userIdToUpdate),
+        id: userIdToUpdate,
       },
       body
     );

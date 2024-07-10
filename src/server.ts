@@ -6,7 +6,7 @@ import {
   deleteUser,
   getUserProfile,
   getAllUsers,
-  updateUserProfileById,
+  updateUserProfile,
   getUserByEmail,
 } from "./controllers/users.controller";
 import {
@@ -24,6 +24,7 @@ import {
 import { AppDataSource } from "./database/db";
 import { createRole } from "./controllers/roles.controller";
 import { auth } from "./middleware/auth";
+import { isAdmin } from "./middleware/isAdmin";
 
 const app = express();
 
@@ -43,9 +44,9 @@ app.post("/api/auth/register", register);
 app.post("/api/auth/login", login);
 
 //Users
-app.get("/api/users", getAllUsers);
+app.get("/api/users", auth, isAdmin, getAllUsers);
 app.get("/api/users/profile", auth, getUserProfile);
-app.post("/api/users/profile/:id", updateUserProfileById);
+app.post("/api/users/profile", auth, updateUserProfile);
 app.get("/api/users/email", getUserByEmail);
 app.delete("/api/users/:id", deleteUser);
 app.put("/api/users/:id/role", changeUserRole);
