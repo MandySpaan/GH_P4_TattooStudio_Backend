@@ -326,7 +326,7 @@ export const userSeeder = async () => {
       await user.save();
     }
 
-    console.log("50 users have been created");
+    console.log("Users have been created");
   } catch (error: any) {
     console.log("Error userSeeder:", error.message);
   } finally {
