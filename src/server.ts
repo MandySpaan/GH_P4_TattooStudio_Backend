@@ -52,7 +52,7 @@ app.delete("/api/users/:id", deleteUser);
 app.put("/api/users/:id/role", changeUserRole);
 
 //Appointments
-app.post("/api/appointments", createAppointment);
+app.post("/api/appointments", auth, createAppointment);
 app.put("/api/appointments", updateAppointment);
 app.get("/api/appointments/:id", getAppointmentById);
 app.get("/api/appointments", getAllAppointments);
