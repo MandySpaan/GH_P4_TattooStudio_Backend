@@ -4,22 +4,19 @@ This project was made as part of a course Full Stack Developer for GeeksHubs Aca
 
 ## Index 🔍
 
-  <ol>
-    <li><a href="#about-the-project">About the project</a></li>
-    <li><a href="#deploy">Deploy</a></li>
-    <li><a href="#stack">Stack</a></li>
-    <li><a href="#er-diagram-from-sql">Database Diagram</a></li>
-    <li><a href="#clone">Clone</a></li>
-    <li><a href="#endpoints">Endpoints</a></li>
-  </ol>
+<a href="#assignment-">Assignment</a>
+<a href="#deploy">Deploy</a>
+<a href="#stack">Stack</a>
+<a href="#er-diagram-from-sql">Database Diagram</a>
+<a href="#clone">Clone</a>
+<a href="#endpoints">Endpoints</a>
+<a href="#points-of-improvement">Points of Improvement</a>
 
 ## Assignment 📝
 
-GeeksHub gave the following fictive assignment: <br>
+GeeksHub gave the following fictive assignment: We are tasked with developing the backend corresponding to the appointment management system for a tattoo studio.
 
-We are tasked with developing the backend corresponding to the appointment management system for a tattoo studio.
-
-<bold>Appointment management for a tattoo studio</bold>: Users will be able to register in the application, log in and access their personal area. Within their area, they will be able to view a list of scheduled appointments for tattoo and piercing services, as well as create new appointments for various services offered by the studio.
+**Appointment management for a tattoo studio**: Users will be able to register in the application, log in and access their personal area. Within their area, they will be able to view a list of scheduled appointments for tattoo and piercing services, as well as create new appointments for various services offered by the studio.
 
 ## Deploy
 
@@ -70,7 +67,6 @@ Diagram will be added soon
 4. `$ Execute the migrations`
 5. `$ Execute the seeders`
 6. `$ npm run dev` to elevate our server
-7. ...
 
 ## Endpoints
 
@@ -397,3 +393,7 @@ Diagram will be added soon
       ```
 
   </details>
+
+## Points of Improvement
+
+To be added..
