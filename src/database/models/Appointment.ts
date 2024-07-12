@@ -12,7 +12,7 @@ import { Service } from "./Service";
 @Entity("appointments")
 export class Appointment extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id!: string;
+  id!: number;
 
   @Column({ name: "appointment_date" })
   appointmentDate!: Date;
