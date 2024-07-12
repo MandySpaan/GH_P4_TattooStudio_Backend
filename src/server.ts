@@ -54,7 +54,7 @@ app.put("/api/users/:id/role", changeUserRole);
 //Appointments
 app.post("/api/appointments", auth, createAppointment);
 app.put("/api/appointments/:id", auth, updateAppointment);
-app.get("/api/appointments/:id", getAppointmentById);
+app.get("/api/appointments/:id", auth, isAdmin, getAppointmentById);
 app.get("/api/appointments", getAllAppointments);
 
 //Services
