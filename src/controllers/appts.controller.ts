@@ -113,6 +113,23 @@ export const getAppointmentById = async (req: Request, res: Response) => {
   }
 };
 
-export const getAllAppointments = (req: Request, res: Response) => {
-  res.send(`getAllAppointments code to be written`);
+export const getAllAppointments = async (req: Request, res: Response) => {
+  try {
+    //ToDo: add code to show max 10 appointments per page
+    const users = await Appointment.find({
+      relations: ["user", "service"],
+    });
+
+    res.json({
+      success: true,
+      message: "All appointments retrieved",
+      data: users,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving appointments",
+      error: error.message || error,
+    });
+  }
 };

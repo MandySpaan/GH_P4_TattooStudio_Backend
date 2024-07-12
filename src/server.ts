@@ -55,10 +55,10 @@ app.put("/api/users/:id/role", changeUserRole);
 app.post("/api/appointments", auth, createAppointment);
 app.put("/api/appointments/:id", auth, updateAppointment);
 app.get("/api/appointments/:id", auth, isAdmin, getAppointmentById);
-app.get("/api/appointments", getAllAppointments);
+app.get("/api/appointments", auth, isAdmin, getAllAppointments);
 
 //Services
-app.get("/api/services", getAllServices);
+app.get("/api/services", auth, isAdmin, getAllServices);
 app.post("/api/services", createService);
 app.put("/api/services/:id", updateServiceById);
 app.delete("/api/services/:id", deleteServiceById);

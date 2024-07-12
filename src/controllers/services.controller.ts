@@ -1,7 +1,22 @@
 import { Request, Response } from "express";
+import { Service } from "../database/models/Service";
 
-export const getAllServices = (req: Request, res: Response) => {
-  res.send("getAllServices code to be written");
+export const getAllServices = async (req: Request, res: Response) => {
+  try {
+    const users = await Service.find();
+
+    res.json({
+      success: true,
+      message: "All services retrieved",
+      data: users,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving services",
+      error: error.message || error,
+    });
+  }
 };
 
 export const createService = (req: Request, res: Response) => {
