@@ -21,7 +21,8 @@ corresponding to the appointment management system for a tattoo studio.
 
 ## Deploy 💫
 
-Deploy via Zeabur: <a href="ghtattooshop.zeabur.app"><strong>ghtattooshop.zeabur.app </strong></a>
+Deploy via Zeabur: [ghtattooshop.zeabur.app](https://ghtattooshop.zeabur.app/) <br>
+(This is a free version of Zeabur and can get suspended at any moment.)
 
 ## Stack 💻
 
