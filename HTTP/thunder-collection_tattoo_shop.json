@@ -1,0 +1,301 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "tattoo_shop",
+    "collectionId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+    "dateExported": "2024-07-13T17:19:28.065Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "eab728a8-f903-4b45-95ea-c43e42dd1a67",
+            "name": "Roles",
+            "containerId": "",
+            "created": "2024-07-08T18:59:42.656Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "4ad99fad-5f3c-46cf-b4de-62d1a269b111",
+            "name": "Authentication",
+            "containerId": "",
+            "created": "2024-07-08T15:13:37.432Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "b52c6371-dd2e-43e7-a164-8d0b18fd2ecd",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-07-08T15:14:13.286Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "5440050c-30dd-4f92-9347-2e937a3d14da",
+            "name": "Appointments",
+            "containerId": "",
+            "created": "2024-07-08T15:14:40.757Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "24938863-309c-4581-af23-7d88e691e062",
+            "name": "Services",
+            "containerId": "",
+            "created": "2024-07-08T15:14:57.389Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "07558a6e-3ccf-4c0d-bc9f-8dd883e48dbd",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "4ad99fad-5f3c-46cf-b4de-62d1a269b111",
+            "name": "auth_register",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-07-03T19:36:13.358Z",
+            "modified": "2024-07-08T17:52:39.841Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"Tim\",\n  \"lastName\": \"Spaan\",\n  \"email\": \"tim@tim.com\",\n  \"password\": \"efteling\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "a6597988-ee25-45c4-a6e6-0c20688c3300",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "b52c6371-dd2e-43e7-a164-8d0b18fd2ecd",
+            "name": "users_getAllUsers",
+            "url": "http://localhost:3000/api/users",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-03T19:56:39.398Z",
+            "modified": "2024-07-10T17:02:26.467Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MSwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDYzMDkyNiwiZXhwIjoxNzIwNjM4MTI2fQ.o_Xn62XnHOXA-vw64I7ZYjpjRhx_-VXxtxWTTEeu2oI"
+            }
+        },
+        {
+            "_id": "c8765936-c19d-4abc-b714-67ae0accd87f",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "5440050c-30dd-4f92-9347-2e937a3d14da",
+            "name": "appts_createAppointment",
+            "url": "http://localhost:3000/api/appointments",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-07-04T05:37:40.156Z",
+            "modified": "2024-07-10T18:07:37.720Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"appointmentDate\": \"2024/08/02\",\n  \"serviceId\": 2\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MSwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDYzNDgzOCwiZXhwIjoxNzIwNjQyMDM4fQ.kGS66Z0mT8PYO9Ihbv5lsRdG-JZuIoTvF4DZYCFZws8"
+            }
+        },
+        {
+            "_id": "07bb5e7e-91b7-4c5a-af1e-28c57ac243d0",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "24938863-309c-4581-af23-7d88e691e062",
+            "name": "services_getAllServices",
+            "url": "http://localhost:3000/api/services",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-04T05:56:05.605Z",
+            "modified": "2024-07-12T17:16:00.533Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6MywiZW1haWwiOiJ1c2VyN0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMDgwNDU0MiwiZXhwIjoxNzIwODExNzQyfQ.GKe8r3V0RuPQZ90waXc3I_oZIC1EjgaQQltqp8SYO7U"
+            }
+        },
+        {
+            "_id": "9d6a5cf0-ee56-4e3c-b822-1b9912946ef8",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "eab728a8-f903-4b45-95ea-c43e42dd1a67",
+            "name": "roles_create",
+            "url": "http://localhost:3000/api/roles",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-07-08T18:59:12.309Z",
+            "modified": "2024-07-08T19:18:18.007Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"roleName\": \"user\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6caffb18-498b-4bb7-a66f-59d886cee020",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "4ad99fad-5f3c-46cf-b4de-62d1a269b111",
+            "name": "auth_login",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-07-03T19:39:41.762Z",
+            "modified": "2024-07-12T17:15:42.788Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"user7@example.com\",\n  \"password\": \"password7\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5df9a699-57f9-4cc7-9223-28101fec768a",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "b52c6371-dd2e-43e7-a164-8d0b18fd2ecd",
+            "name": "users_getUserProfile",
+            "url": "http://localhost:3000/api/users/profile",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-07-03T20:00:24.364Z",
+            "modified": "2024-07-10T16:51:27.556Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6MywiZW1haWwiOiJ1c2VyNkBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDYzMDI2OCwiZXhwIjoxNzIwNjM3NDY4fQ.8YjkfBfndUu8valfK_o9wVHPtqlh7evuRnur0uM9jbc"
+            }
+        },
+        {
+            "_id": "785fdce6-5c27-4df4-8471-488ad4dfab0a",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "5440050c-30dd-4f92-9347-2e937a3d14da",
+            "name": "appts_updateAppointment",
+            "url": "http://localhost:3000/api/appointments/36",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-07-04T05:39:16.999Z",
+            "modified": "2024-07-12T16:41:54.174Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"appointmentDate\": \"2024/08/04\",\n  \"serviceId\": \"1\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6MywiZW1haWwiOiJ1c2VyOEBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDgwMTkxOCwiZXhwIjoxNzIwODA5MTE4fQ.geZL_Oiy1h2d6kTfChBvjq-VwCt-LuGXjPBq7bmCupo"
+            }
+        },
+        {
+            "_id": "5368cdfe-7bf0-475a-b9c9-f9db48214e9a",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "24938863-309c-4581-af23-7d88e691e062",
+            "name": "services_createService",
+            "url": "http://localhost:3000/api/services",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-07-04T05:57:26.849Z",
+            "modified": "2024-07-04T05:57:26.849Z",
+            "headers": []
+        },
+        {
+            "_id": "b527d1e6-4800-4e4c-8174-b07010017248",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "b52c6371-dd2e-43e7-a164-8d0b18fd2ecd",
+            "name": "users_updateUserProfile",
+            "url": "http://localhost:3000/api/users/profile",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-07-03T20:02:55.237Z",
+            "modified": "2024-07-10T17:06:43.658Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"Tom\",\n  \"email\": \"tom@tom.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MSwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDYzMDkyNiwiZXhwIjoxNzIwNjM4MTI2fQ.o_Xn62XnHOXA-vw64I7ZYjpjRhx_-VXxtxWTTEeu2oI"
+            }
+        },
+        {
+            "_id": "a479ee32-c595-47a3-b59b-48f5f9530fe3",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "5440050c-30dd-4f92-9347-2e937a3d14da",
+            "name": "appts_getAppointmentById",
+            "url": "http://localhost:3000/api/appointments/67",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-07-04T05:45:31.501Z",
+            "modified": "2024-07-12T17:00:30.867Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MSwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDgwMzYxOSwiZXhwIjoxNzIwODEwODE5fQ.tpnEglASxS2VUFAgOL0C7BrIqHwWiFv547hbxkTEtgo"
+            }
+        },
+        {
+            "_id": "38513cde-e00f-4aa7-b78d-e31bcebaf59a",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "24938863-309c-4581-af23-7d88e691e062",
+            "name": "services_updateServiceById",
+            "url": "http://localhost:3000/api/services/67",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-07-04T05:59:44.720Z",
+            "modified": "2024-07-04T05:59:44.720Z",
+            "headers": []
+        },
+        {
+            "_id": "d4b411e4-1bbb-4730-a658-4c2992b59f12",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "b52c6371-dd2e-43e7-a164-8d0b18fd2ecd",
+            "name": "users_deleteUser",
+            "url": "http://localhost:3000/api/users/67",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-07-03T20:17:19.813Z",
+            "modified": "2024-07-03T20:17:19.813Z",
+            "headers": []
+        },
+        {
+            "_id": "bca03429-aac8-41f9-b2e8-c823cc9d7cec",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "5440050c-30dd-4f92-9347-2e937a3d14da",
+            "name": "appts_getAllAppointments",
+            "url": "http://localhost:3000/api/appointments",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-07-04T05:47:07.423Z",
+            "modified": "2024-07-12T17:15:54.538Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6MywiZW1haWwiOiJ1c2VyN0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMDgwNDU0MiwiZXhwIjoxNzIwODExNzQyfQ.GKe8r3V0RuPQZ90waXc3I_oZIC1EjgaQQltqp8SYO7U"
+            }
+        },
+        {
+            "_id": "3b0b7231-d130-4017-8e12-e84568bb24bd",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "24938863-309c-4581-af23-7d88e691e062",
+            "name": "services_deleteServiceById",
+            "url": "http://localhost:3000/api/services/67",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-07-04T06:01:30.961Z",
+            "modified": "2024-07-04T06:01:30.961Z",
+            "headers": []
+        },
+        {
+            "_id": "c528c70d-536d-41d0-9956-d630b80bf140",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "b52c6371-dd2e-43e7-a164-8d0b18fd2ecd",
+            "name": "users_changeUserRole",
+            "url": "http://localhost:3000/api/users/67/role",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-07-03T20:22:29.917Z",
+            "modified": "2024-07-03T20:22:29.917Z",
+            "headers": []
+        }
+    ],
+    "ref": "pSEA6B-xBIqQBjcYhppgTpM6YRGYK6fRc1VGhg1aolHZajvjyquLIa1v0Za0FeltVo67a574GpWcxufxM3hS9w"
+}
