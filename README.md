@@ -4,28 +4,26 @@ This project was made as part of a course Full Stack Developer for GeeksHubs Aca
 
 ## Index 🔍
 
-<a href="#assignment-">Assignment</a>
-<a href="#deploy">Deploy</a>
-<a href="#stack">Stack</a>
-<a href="#er-diagram-from-sql">Database Diagram</a>
-<a href="#clone">Clone</a>
-<a href="#endpoints">Endpoints</a>
-<a href="#points-of-improvement">Points of Improvement</a>
+- [Assignment](#assignment-)
+- [Deploy](#deploy)
+- [Stack](#stack)
+- [Database Diagram](#database-diagram)
+- [Clone](#clone)
+- [Endpoints](#endpoints)
+- [Points of Improvement](#points-of-improvement)
 
 ## Assignment 📝
 
-GeeksHub gave the following fictive assignment: We are tasked with developing the backend corresponding to the appointment management system for a tattoo studio.
+GeeksHub gave the following fictive assignment: The product department has tasked us with developing the backend
+corresponding to the appointment management system for a tattoo studio.
 
 **Appointment management for a tattoo studio**: Users will be able to register in the application, log in and access their personal area. Within their area, they will be able to view a list of scheduled appointments for tattoo and piercing services, as well as create new appointments for various services offered by the studio.
 
-## Deploy
+## Deploy 💫
 
-Zeabur link will be added here soon.
+Deploy via Zeabur: <a href="ghtattooshop.zeabur.app"><strong>ghtattooshop.zeabur.app </strong></a>
 
-<!-- ToDo: Deploy and add zeabur link -->
- <!-- <a href="ZEABUR LINK TO BE ADDED HERE"><strong> Click here! </strong></a> -->
-
-## Stack
+## Stack 💻
 
 <div align="center">
 <a href="https://www.expressjs.com/">
@@ -51,15 +49,13 @@ Zeabur link will be added here soon.
 </a>
  </div>
 
-## ER Diagram from SQL
+## Database Diagram 📊
 
-Diagram will be added soon
+This diagram shows the structure of the database tables.
 
-<!-- ToDo: Add diagram here -->
+![Database Diagram](./img/db-diagram.png)
 
-<img src="./img/Screenshot 2024-07-03 at 20.05.06.png">
-
-## Local installation option
+## Local installation option 🛠️
 
 1. Clone the repository from the url
 2. `$ npm install`
@@ -68,7 +64,7 @@ Diagram will be added soon
 5. `$ Execute the seeders`
 6. `$ npm run dev` to elevate our server
 
-## Endpoints
+## Endpoints ⚙️
 
 <details>
 <summary>Authentication</summary>
@@ -394,6 +390,6 @@ Diagram will be added soon
 
   </details>
 
-## Points of Improvement
+## Points of Improvement 💡
 
-To be added..
+Throughout the project you can find several "ToDo"-comments here and there. These are either thoughts I had myself for extra functionalities or extra options (but not requirements) to add as suggested by the original assignment.
