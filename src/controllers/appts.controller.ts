@@ -82,6 +82,34 @@ export const updateAppointment = async (req: Request, res: Response) => {
   }
 };
 
+export const getMyAppointments = async (req: Request, res: Response) => {
+  try {
+    const userId = req.tokenData.id;
+
+    const appointments = await Appointment.find({
+      where: { userId: userId },
+    });
+    if (!appointments) {
+      return res.status(404).json({
+        success: false,
+        message: "No appointments found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Appointments found",
+      data: appointments,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: "Error trying get all your appointments",
+      error: error.message || error,
+    });
+  }
+};
+
 export const getAppointmentById = async (req: Request, res: Response) => {
   try {
     const appointmentId = parseInt(req.params.id);

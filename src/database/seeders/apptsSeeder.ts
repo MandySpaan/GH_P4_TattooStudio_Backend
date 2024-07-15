@@ -15,7 +15,7 @@ export const appointmentsSeeder = async () => {
       return;
     }
 
-    const filteredUsers = users.filter((user) => user.id < 1 || user.id > 5);
+    const filteredUsers = users.filter((user) => user.id > 5);
 
     const generateRandomDate = (start: Date, end: Date) => {
       return new Date(

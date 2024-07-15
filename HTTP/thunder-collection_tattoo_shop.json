@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "tattoo_shop",
     "collectionId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
-    "dateExported": "2024-07-13T17:19:28.065Z",
+    "dateExported": "2024-07-15T12:08:21.168Z",
     "version": "1.2",
     "folders": [
         {
@@ -138,11 +138,11 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-07-03T19:39:41.762Z",
-            "modified": "2024-07-12T17:15:42.788Z",
+            "modified": "2024-07-15T12:01:33.385Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"user7@example.com\",\n  \"password\": \"password7\"\n}",
+                "raw": "{\n  \"email\": \"user8@example.com\",\n  \"password\": \"password8\"\n\n}",
                 "form": []
             }
         },
@@ -221,15 +221,15 @@
             "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
             "containerId": "5440050c-30dd-4f92-9347-2e937a3d14da",
             "name": "appts_getAppointmentById",
-            "url": "http://localhost:3000/api/appointments/67",
+            "url": "http://localhost:3000/api/appointments/user",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-07-04T05:45:31.501Z",
-            "modified": "2024-07-12T17:00:30.867Z",
+            "modified": "2024-07-15T12:02:21.492Z",
             "headers": [],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MSwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsImlhdCI6MTcyMDgwMzYxOSwiZXhwIjoxNzIwODEwODE5fQ.tpnEglASxS2VUFAgOL0C7BrIqHwWiFv547hbxkTEtgo"
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6MywiZW1haWwiOiJ1c2VyOEBleGFtcGxlLmNvbSIsImlhdCI6MTcyMTA0NDkwNiwiZXhwIjoxNzIxMDUyMTA2fQ.y5otOvITjm4Jq-1Ux_-053rxxkNMarLv81sSnzTtGuY"
             }
         },
         {
@@ -265,11 +265,11 @@
             "method": "GET",
             "sortNum": 40000,
             "created": "2024-07-04T05:47:07.423Z",
-            "modified": "2024-07-12T17:15:54.538Z",
+            "modified": "2024-07-15T12:03:30.097Z",
             "headers": [],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6MywiZW1haWwiOiJ1c2VyN0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMDgwNDU0MiwiZXhwIjoxNzIwODExNzQyfQ.GKe8r3V0RuPQZ90waXc3I_oZIC1EjgaQQltqp8SYO7U"
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6MywiZW1haWwiOiJ1c2VyOEBleGFtcGxlLmNvbSIsImlhdCI6MTcyMTA0NDkwNiwiZXhwIjoxNzIxMDUyMTA2fQ.y5otOvITjm4Jq-1Ux_-053rxxkNMarLv81sSnzTtGuY"
             }
         },
         {
@@ -295,7 +295,23 @@
             "created": "2024-07-03T20:22:29.917Z",
             "modified": "2024-07-03T20:22:29.917Z",
             "headers": []
+        },
+        {
+            "_id": "510fb5bd-cbb4-4fb0-bb61-81fd3264f844",
+            "colId": "9da32424-03d3-41b9-abe2-8b14f49c7d1b",
+            "containerId": "5440050c-30dd-4f92-9347-2e937a3d14da",
+            "name": "appts_getMyAppointments",
+            "url": "http://localhost:3000/api/appointments/user",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-07-15T12:05:36.053Z",
+            "modified": "2024-07-15T12:05:36.053Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6MywiZW1haWwiOiJ1c2VyOEBleGFtcGxlLmNvbSIsImlhdCI6MTcyMTA0NDkwNiwiZXhwIjoxNzIxMDUyMTA2fQ.y5otOvITjm4Jq-1Ux_-053rxxkNMarLv81sSnzTtGuY"
+            }
         }
     ],
-    "ref": "pSEA6B-xBIqQBjcYhppgTpM6YRGYK6fRc1VGhg1aolHZajvjyquLIa1v0Za0FeltVo67a574GpWcxufxM3hS9w"
+    "ref": "pSEA6B-xBIqQBjcYhppgTukTO7G_xCllO13dgIc8Snw2cWKdNONuIyAIYynMLIptf9rIFPVgLxwjd7Y__BnHYw"
 }

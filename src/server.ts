@@ -13,6 +13,7 @@ import {
   createAppointment,
   getAllAppointments,
   getAppointmentById,
+  getMyAppointments,
   updateAppointment,
 } from "./controllers/appts.controller";
 import {
@@ -54,6 +55,7 @@ app.put("/api/users/:id/role", changeUserRole);
 //Appointments
 app.post("/api/appointments", auth, createAppointment);
 app.put("/api/appointments/:id", auth, updateAppointment);
+app.get("/api/appointments/user", auth, getMyAppointments);
 app.get("/api/appointments/:id", auth, isAdmin, getAppointmentById);
 app.get("/api/appointments", auth, isAdmin, getAllAppointments);
 
