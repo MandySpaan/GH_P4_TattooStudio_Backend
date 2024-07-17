@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../database/models/User";
+import bcrypt from "bcrypt";
 
 export const getAllUsers = async (req: Request, res: Response) => {
   try {
@@ -54,13 +55,30 @@ export const getUserProfile = async (req: Request, res: Response) => {
 export const updateUserProfile = async (req: Request, res: Response) => {
   try {
     const userIdToUpdate = req.tokenData.id;
-    const body = req.body;
+    const { firstName, lastName, email, password } = req.body;
+    let hashedPassword;
+
+    if (password) {
+      if (password.length < 8 || password.length > 15) {
+        return res.status(400).json({
+          success: false,
+          message: "The password has to be between 8 and 15 characters",
+        });
+      } else {
+        hashedPassword = bcrypt.hashSync(password, 10);
+      }
+    }
 
     const userUpdated = await User.update(
       {
         id: userIdToUpdate,
       },
-      body
+      {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: hashedPassword,
+      }
     );
 
     res.status(200).json({
