@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
+import cors from "cors";
 import { login, register } from "./controllers/auth.controller";
 import {
   changeUserRole,
@@ -28,6 +29,8 @@ import { auth } from "./middleware/auth";
 import { isAdmin } from "./middleware/isAdmin";
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
