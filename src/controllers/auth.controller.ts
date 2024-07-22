@@ -5,12 +5,12 @@ import { User } from "../database/models/User";
 
 export const register = async (req: Request, res: Response) => {
   try {
-    const { firstName, lastName, email, password, roleId } = req.body;
+    const { email, password, roleId } = req.body;
 
-    if (!firstName || !lastName || !email || !password) {
+    if (!email || !password) {
       return res.status(400).json({
         success: false,
-        message: "Required info: firstName, lastName, email, password",
+        message: "Required info: email, password",
       });
     }
 
@@ -26,8 +26,6 @@ export const register = async (req: Request, res: Response) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
 
     const newUser = await User.create({
-      firstName: firstName,
-      lastName: lastName,
       email: email,
       password: hashedPassword,
       roleId: roleId,

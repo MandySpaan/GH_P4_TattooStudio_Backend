@@ -21,7 +21,7 @@ export const serviceSeeder = async () => {
 
     const tattooRestoration = new Service();
     tattooRestoration.id = 3;
-    tattooRestoration.serviceName = "Restoration and Rejuvenation of Tattoo";
+    tattooRestoration.serviceName = "Restoration and Rejuvenation";
     tattooRestoration.description =
       "We specialize in the restoration and rejuvenation of existing tattoos. Our experts work to improve and renew old tattoos, restoring their vitality.";
     await tattooRestoration.save();
@@ -35,7 +35,7 @@ export const serviceSeeder = async () => {
 
     const piercingSales = new Service();
     piercingSales.id = 5;
-    piercingSales.serviceName = "Sales of piercings and other products";
+    piercingSales.serviceName = "Piercings and other products";
     piercingSales.description =
       "In addition to our application services, we offer a selection of piercings and other body art related items. Customers can purchase quality products to complement their unique style.";
     await piercingSales.save();

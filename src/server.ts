@@ -63,7 +63,7 @@ app.get("/api/appointments/:id", auth, isAdmin, getAppointmentById);
 app.get("/api/appointments", auth, isAdmin, getAllAppointments);
 
 //Services
-app.get("/api/services", auth, isAdmin, getAllServices);
+app.get("/api/services", getAllServices);
 app.post("/api/services", createService);
 app.put("/api/services/:id", updateServiceById);
 app.delete("/api/services/:id", deleteServiceById);
