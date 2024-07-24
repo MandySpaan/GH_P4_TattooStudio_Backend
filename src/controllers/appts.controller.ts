@@ -88,6 +88,7 @@ export const getMyAppointments = async (req: Request, res: Response) => {
 
     const appointments = await Appointment.find({
       where: { userId: userId },
+      relations: ["service"],
     });
     if (!appointments) {
       return res.status(404).json({
