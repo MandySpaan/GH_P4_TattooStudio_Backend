@@ -4,11 +4,11 @@ import cors from "cors";
 import { login, register } from "./controllers/auth.controller";
 import {
   changeUserRole,
-  deleteUser,
   getUserProfile,
   getAllUsers,
   updateUserProfile,
   getUserByEmail,
+  deleteUserById,
 } from "./controllers/users.controller";
 import {
   createAppointment,
@@ -53,7 +53,7 @@ app.get("/api/users", auth, isAdmin, getAllUsers);
 app.get("/api/users/profile", auth, getUserProfile);
 app.put("/api/users/profile", auth, updateUserProfile);
 app.get("/api/users/email", getUserByEmail);
-app.delete("/api/users/:id", deleteUser);
+app.delete("/api/users/:id", auth, isAdmin, deleteUserById);
 app.put("/api/users/:id/role", changeUserRole);
 
 //Appointments

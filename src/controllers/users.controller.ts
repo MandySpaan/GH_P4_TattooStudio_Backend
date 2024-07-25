@@ -100,9 +100,28 @@ export const getUserByEmail = (req: Request, res: Response) => {
   res.send("getUserByEmail code to be written");
 };
 
-export const deleteUser = (req: Request, res: Response) => {
-  //ToDo: extra, not mandatory for project
-  res.send("deleteUser code to be written");
+export const deleteUserById = async (req: Request, res: Response) => {
+  try {
+    const userIdToDelete = Number(req.params.id);
+
+    const userDeleted = await User.delete(userIdToDelete);
+
+    if (!userDeleted.affected) {
+      throw new Error("Can't find user");
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "User deleted successfully",
+      data: userDeleted,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error trying to delete user",
+      error: error,
+    });
+  }
 };
 
 export const changeUserRole = (req: Request, res: Response) => {
