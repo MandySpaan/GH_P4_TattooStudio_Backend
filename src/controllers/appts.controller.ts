@@ -162,3 +162,27 @@ export const getAllAppointments = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const deleteAppointmentById = async (req: Request, res: Response) => {
+  try {
+    const apptIdToDelete = Number(req.params.id);
+
+    const apptDeleted = await Appointment.delete(apptIdToDelete);
+
+    if (!apptDeleted.affected) {
+      throw new Error("Appointment not foudn");
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Appointment deleted successfully",
+      data: apptDeleted,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error trying to delete appointment",
+      error: error,
+    });
+  }
+};

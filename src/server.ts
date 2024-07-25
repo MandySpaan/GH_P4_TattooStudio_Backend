@@ -12,6 +12,7 @@ import {
 } from "./controllers/users.controller";
 import {
   createAppointment,
+  deleteAppointmentById,
   getAllAppointments,
   getAppointmentById,
   getMyAppointments,
@@ -50,7 +51,7 @@ app.post("/api/auth/login", login);
 //Users
 app.get("/api/users", auth, isAdmin, getAllUsers);
 app.get("/api/users/profile", auth, getUserProfile);
-app.post("/api/users/profile", auth, updateUserProfile);
+app.put("/api/users/profile", auth, updateUserProfile);
 app.get("/api/users/email", getUserByEmail);
 app.delete("/api/users/:id", deleteUser);
 app.put("/api/users/:id/role", changeUserRole);
@@ -61,6 +62,7 @@ app.put("/api/appointments/:id", auth, updateAppointment);
 app.get("/api/appointments/user", auth, getMyAppointments);
 app.get("/api/appointments/:id", auth, isAdmin, getAppointmentById);
 app.get("/api/appointments", auth, isAdmin, getAllAppointments);
+app.delete("/api/appointments/:id", auth, deleteAppointmentById);
 
 //Services
 app.get("/api/services", getAllServices);

@@ -37,7 +37,7 @@ export const serviceSeeder = async () => {
     piercingSales.id = 5;
     piercingSales.serviceName = "Piercings and other products";
     piercingSales.description =
-      "In addition to our application services, we offer a selection of piercings and other body art related items. Customers can purchase quality products to complement their unique style.";
+      "Out store offers a selection of piercings and other body art related items. Customers can purchase quality products to complement their unique style.";
     await piercingSales.save();
 
     console.log("Services have been created");
