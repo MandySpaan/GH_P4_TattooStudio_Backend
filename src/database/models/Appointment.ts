@@ -23,7 +23,7 @@ export class Appointment extends BaseEntity {
   @Column({ name: "service_id" })
   serviceId!: number;
 
-  @ManyToOne(() => User, (user) => user.appointments)
+  @ManyToOne(() => User, (user) => user.appointments, { onDelete: "CASCADE" })
   @JoinColumn({ name: "user_id" })
   user!: User;
 
