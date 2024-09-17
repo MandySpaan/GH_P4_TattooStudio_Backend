@@ -19,6 +19,8 @@ corresponding to the appointment management system for a tattoo studio.
 
 **Appointment management for a tattoo studio**: Users will be able to register in the application, log in and access their personal area. Within their area, they will be able to view a list of scheduled appointments for tattoo and piercing services, as well as create new appointments for various services offered by the studio.
 
+You can find the related frontend project here: [TattooStudio_Frontend](https://github.com/MandySpaan/TattooStudio_Frontend)
+
 ## Deploy 💫
 
 Deploy via Zeabur: [ghtattooshop.zeabur.app](https://ghtattooshop.zeabur.app/) <br>
@@ -56,14 +58,29 @@ This diagram shows the structure of the database tables.
 
 ![Database Diagram](./img/db-diagram.png)
 
-## Local installation option 🛠️
+## Local installation 🛠️
 
-1. Clone the repository from the url
-2. `$ npm install`
-3. Connect the cloned repo with our Database
-4. `$ Execute the migrations`
-5. `$ Execute the seeders`
-6. `$ npm run dev` to elevate our server
+### Backend
+
+1. Clone the repository
+   `$ git clone https://github.com/MandySpaan/GH_P4_TattooStudio_Backend`
+2. Install dependencies
+   `$ npm install --y`
+3. Start Express on the server
+   `$ npm run dev`
+4. Run migrations
+   `$ npm run run-migrations`
+
+### Frontend
+
+You can find the related frontend project here: [TattooStudio_Frontend](https://github.com/MandySpaan/TattooStudio_Frontend)
+
+1. Clone the repository
+   `$ git clone https://github.com/MandySpaan/GH_P6_TattooStudio_Frontend`
+2. Install dependencies
+   `$ npm install --y`
+3. Start Express on the server
+   `$ npm run dev`
 
 ## Endpoints ⚙️
 
